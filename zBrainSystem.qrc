@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/zBrainSystem">
+        <file>Resources/Brain.ico</file>
+        <file>Resources/43096_brush.png</file>
+        <file>Resources/96.png</file>
+        <file>Resources/add.png</file>
+        <file>Resources/delete.png</file>
+        <file>Resources/gear.png</file>
+        <file>Resources/media_play_24x24.png</file>
+        <file>Resources/media_stop_24x24.png</file>
+        <file>Resources/fullscreen.ico</file>
+    </qresource>
+</RCC>

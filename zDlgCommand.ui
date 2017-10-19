@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>zDlgCommand</class>
+ <widget class="QDialog" name="zDlgCommand">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>358</width>
+    <height>188</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Команда</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="m_lName">
+     <property name="text">
+      <string>Имя:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="m_leName"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="m_lColor">
+     <property name="text">
+      <string>Цвет:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="m_lCmdColor">
+       <property name="minimumSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>24</width>
+         <height>24</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="m_btnSelectColor">
+       <property name="text">
+        <string>Выбрать</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="m_lButton">
+     <property name="text">
+      <string>Кнопка:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QKeySequenceEdit" name="m_ksButton"/>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="m_bbOkCancel">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>m_leName</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>zDlgCommand</receiver>
+   <slot>updateButtons()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>72</x>
+     <y>36</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>133</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_btnSelectColor</sender>
+   <signal>pressed()</signal>
+   <receiver>zDlgCommand</receiver>
+   <slot>onSelectColor()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>262</x>
+     <y>82</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_bbOkCancel</sender>
+   <signal>accepted()</signal>
+   <receiver>zDlgCommand</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>251</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>357</x>
+     <y>150</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_bbOkCancel</sender>
+   <signal>rejected()</signal>
+   <receiver>zDlgCommand</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ksButton</sender>
+   <signal>editingFinished()</signal>
+   <receiver>zDlgCommand</receiver>
+   <slot>updateButtons()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>137</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>updateButtons()</slot>
+  <slot>onSelectColor()</slot>
+ </slots>
+</ui>
